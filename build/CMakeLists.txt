@@ -13,6 +13,8 @@ if ( WIN32 AND NOT CYGWIN AND NOT ( CMAKE_SYSTEM_NAME STREQUAL "WindowsStore" ) 
 	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd" CACHE STRING "")
 endif ()
 
+set(CMAKE_CXX_FLAGS "-std=c++11")
+
 project(XLua)
 
 if ( IOS )
@@ -34,8 +36,8 @@ find_path(XLUA_PROJECT_DIR NAMES SConstruct
 MARK_AS_ADVANCED(XLUA_PROJECT_DIR)
 
 #
-set (CMAKE_XCODE_ATTRIBUTE_IPHONEOS_DEPLOYMENT_TARGET "10.0" CACHE string "iOS Deployment Target")
-set (CMAKE_OSX_ARCHITECTURES "arm64" CACHE string "Build architecture for iOS")
+#set (CMAKE_XCODE_ATTRIBUTE_IPHONEOS_DEPLOYMENT_TARGET "10.0" CACHE string "iOS Deployment Target")
+#set (CMAKE_OSX_ARCHITECTURES "arm64" CACHE string "Build architecture for iOS")
 
 #数据读取
 set (READER_SRC 
